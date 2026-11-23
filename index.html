@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بوت تداول الذهب على MT5 عبر تيليجرام | تجربة مجانية</title>
+  <meta name="description" content="جرّب بوت تداول XAUUSD على MT5 عبر تيليجرام: تجربة مجانية لأول حساب، تنبيهات أخبار USD، إعدادات ذهب جاهزة، وتفعيل سهل للاشتراك.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://mt5-bot.duckdns.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:title" content="بوت تداول الذهب MT5 عبر تيليجرام">
+  <meta property="og:description" content="تجربة مجانية لأول حساب، تنبيهات أخبار USD، إعدادات ذهب جاهزة، وتفعيل سريع عبر تيليجرام.">
+  <meta property="og:url" content="https://mt5-bot.duckdns.org/">
+  <meta property="og:site_name" content="Auto Trading Bot">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="بوت تداول الذهب MT5 عبر تيليجرام">
+  <meta name="twitter:description" content="تجربة مجانية، تنبيهات أخبار USD، إعدادات ذهب جاهزة، وتفعيل سهل عبر تيليجرام.">
+  <meta name="theme-color" content="#0b1220">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121b2f;
+      --card: #16233d;
+      --text: #eef3ff;
+      --muted: #b9c7e6;
+      --gold: #d4a017;
+      --gold-2: #f0c75e;
+      --border: rgba(255,255,255,.08);
+      --ok: #35c26b;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, "Segoe UI", sans-serif;
+      background: radial-gradient(1200px 500px at 50% -10%, rgba(212,160,23,.18), transparent 60%), var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.75);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar .inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; }
+    .logo {
+      width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #1a1400; font-size: 20px; font-weight: 900;
+    }
+    .nav { display: flex; gap: 18px; color: var(--muted); font-size: 14px; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 12px; text-decoration: none; font-weight: 700; border: 1px solid transparent;
+      transition: transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-2)); color: #1a1400; }
+    .btn-secondary { background: transparent; border-color: var(--border); color: var(--text); }
+    .hero { padding: 72px 0 40px; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: stretch; }
+    .eyebrow {
+      display: inline-flex; padding: 6px 12px; border-radius: 999px; font-size: 13px; color: var(--gold-2);
+      background: rgba(212,160,23,.12); border: 1px solid rgba(212,160,23,.25); margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.25; margin: 0 0 16px; letter-spacing: -.02em; }
+    .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; max-width: 700px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+    .disclaimer { font-size: 13px; color: #c9d3e3; opacity: .9; }
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 24px; }
+    .hero-card h2 { margin: 0 0 14px; font-size: 20px; }
+    .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    .checklist li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
+    .check {
+      width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; display: grid; place-items: center;
+      background: rgba(53,194,107,.15); color: var(--ok); font-size: 13px; margin-top: 2px;
+    }
+    section { padding: 34px 0; }
+    .section-title { font-size: clamp(26px, 3.5vw, 38px); margin: 0 0 10px; line-height: 1.3; }
+    .section-lead { color: var(--muted); margin: 0 0 24px; max-width: 760px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card { padding: 22px; }
+    .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); }
+    .icon {
+      width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 14px;
+      background: rgba(212,160,23,.12); color: var(--gold-2); font-size: 22px;
+    }
+    .steps .card { position: relative; }
+    .step-num {
+      position: absolute; top: 18px; left: 18px; width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(212,160,23,.18); color: var(--gold-2); display: grid; place-items: center; font-weight: 700; font-size: 14px;
+    }
+    .steps .card h3 { padding-left: 38px; }
+    .pricing { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; }
+    .price { font-size: 42px; font-weight: 800; color: var(--gold-2); margin: 8px 0; line-height: 1.2; }
+    .price small { font-size: 16px; color: var(--muted); font-weight: 500; }
+    .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .list li { color: var(--muted); display: flex; gap: 10px; }
+    .list li::before { content: "✓"; color: var(--ok); font-weight: 700; }
+    .faq { display: grid; gap: 12px; }
+    details {
+      background: rgba(255,255,255,.02); border: 1px solid var(--border); border-radius: 14px; padding: 0 18px;
+    }
+    summary { cursor: pointer; padding: 16px 0; font-weight: 700; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin: 0 0 16px; color: var(--muted); }
+    .cta {
+      padding: 30px; text-align: center;
+      background: linear-gradient(135deg, rgba(212,160,23,.16), rgba(255,255,255,.02));
+    }
+    .cta p { color: var(--muted); max-width: 700px; margin: 0 auto 20px; }
+    footer { padding: 30px 0 50px; color: #9fb0d1; font-size: 13px; }
+    footer .inner { border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 8px; }
+    .muted-link { color: var(--gold-2); text-decoration: none; }
+    @media (max-width: 900px) {
+      .hero-grid, .pricing { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .nav { display: none; }
+    }
+    @media (max-width: 560px) {
+      .hero { padding-top: 48px; }
+      .btn { width: 100%; }
+      .hero-actions { flex-direction: column; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Auto Trading Bot for MT5 Gold",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Telegram, MetaTrader 5",
+    "description": "بوت تيليجرام لمتداولي الذهب XAUUSD على MT5: تجربة مجانية، تنبيهات أخبار USD، إعدادات ذهب جاهزة، وإدارة الاشتراك.",
+    "offers": {
+      "@type": "Offer",
+      "price": "5",
+      "priceCurrency": "USD",
+      "description": "اشتراك 7 أيام - الدفع عبر USDT"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"ما هو هذا البوت؟","acceptedAnswer":{"@type":"Answer","text":"هو بوت تيليجرام يساعد متداولي الذهب (XAUUSD) على MT5 في إدارة الاشتراك والتفعيل، وتقديم ملف EA والإعدادات الموصى بها، وتنبيهات أخبار USD، ودليل تثبيت خطوة بخطوة."}},
+      {"@type":"Question","name":"هل توجد تجربة مجانية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يحصل المستخدم على تجربة مجانية لأول حساب MT5 يضيفه داخل البوت، وفق إعدادات البوت الحالية."}},
+      {"@type":"Question","name":"هل البوت يضمن الربح؟","acceptedAnswer":{"@type":"Answer","text":"لا. البوت أداة مساعدة للتداول، والتداول ينطوي على مخاطر وقد تخسر جزءًا من رأس المال أو كله. لا توجد نتائج مضمونة."}},
+      {"@type":"Question","name":"كيف يتم الدفع والتفعيل؟","acceptedAnswer":{"@type":"Answer","text":"تختار الحساب وخطة الاشتراك داخل تيليجرام وتدفع عبر USDT (BEP20 أو TRC20). بعد تأكيد الدفع يتم تفعيل الاشتراك للحساب المرتبط."}},
+      {"@type":"Question","name":"هل يمكنني إدارة أكثر من حساب MT5؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يمكنك إضافة أكثر من حساب MT5، ولكل حساب اشتراك وتفعيل مستقل."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container inner">
+      <a class="brand" href="#top" aria-label="Auto Trading Bot">
+        <span class="logo">Au</span>
+        <span>Auto Trading Bot</span>
+      </a>
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#features">المزايا</a>
+        <a href="#how">كيف يعمل</a>
+        <a href="#pricing">السعر</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+      </nav>
+      <a class="btn btn-primary" href="https://t.me/Auto_Trading_2027_bot" target="_blank" rel="noopener">ابدأ على تيليجرام</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">XAUUSD • MT5 • Telegram</div>
+          <h1>بوت تداول الذهب (XAUUSD) على MT5 — مباشرة عبر تيليجرام</h1>
+          <p class="lead">أتمت مساعدتك في تداول الذهب مع إدارة التفعيل والاشتراك من داخل تيليجرام: تجربة مجانية لأول حساب، تنبيهات أخبار USD، إعدادات ذهب جاهزة، ودليل تثبيت خطوة بخطوة.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://t.me/Auto_Trading_2027_bot" target="_blank" rel="noopener">جرّب البوت مجانًا</a>
+            <a class="btn btn-secondary" href="#how">شاهد كيف يعمل</a>
+          </div>
+          <p class="disclaimer">تنبيه: التداول ينطوي على مخاطر، والأداة للمساعدة ولا تضمن الربح.</p>
+        </div>
+        <aside class="panel hero-card" aria-label="ملخص سريع">
+          <h2>ماذا ستحصل عليه؟</h2>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span><strong>تجربة مجانية</strong> لأول حساب MT5 تضيفه.</span></li>
+            <li><span class="check">✓</span><span><strong>تنبيهات أخبار USD</strong> المهمة قبل/أثناء فترة الخبر.</span></li>
+            <li><span class="check">✓</span><span><strong>ملف EA + إعدادات ذهب (.set)</strong> موصى بها.</span></li>
+            <li><span class="check">✓</span><span><strong>دليل تثبيت تفاعلي</strong> داخل البوت خطوة بخطوة.</span></li>
+            <li><span class="check">✓</span><span><strong>اشتراك سهل</strong> عبر USDT (BEP20 / TRC20).</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title">لماذا هذا البوت؟</h2>
+        <p class="section-lead">صُمم لمتداولي الذهب على MT5 الذين يريدون تجربة واضحة، تفعيلًا سريعًا، وأدوات مساعدة عملية داخل تيليجرام.</p>
+        <div class="grid-3">
+          <article class="panel card">
+            <div class="icon">⚡</div>
+            <h3>تجربة قبل الاشتراك</h3>
+            <p>ابدأ بتجربة مجانية لأول حساب MT5 لتتأكد من ملاءمة البوت لك قبل الدفع.</p>
+          </article>
+          <article class="panel card">
+            <div class="icon">📰</div>
+            <h3>تنبيهات أخبار USD</h3>
+            <p>استقبل تنبيهات للأخبار المهمة المؤثرة على الذهب لتكون مستعدًا أثناء فترات التقلب.</p>
+          </article>
+          <article class="panel card">
+            <div class="icon">⚙️</div>
+            <h3>إعدادات جاهزة للذهب</h3>
+            <p>احصل على ملف إعدادات موصى به للذهب، مع إمكانية تحميله وتطبيقه بسهولة على MT5.</p>
+          </article>
+          <article class="panel card">
+            <div class="icon">🧭</div>
+            <h3>دليل تثبيت موجه</h3>
+            <p>أوامر ودليل تفاعلي داخل البوت يشرح خطوات التثبيت والتشغيل والتحقق خطوة بخطوة.</p>
+          </article>
+          <article class="panel card">
+            <div class="icon">💳</div>
+            <h3>اشتراك وتفعيل بسيط</h3>
+            <p>ادفع عبر USDT على BEP20 أو TRC20، ويتم تفعيل الاشتراك للحساب المرتبط بعد التأكيد.</p>
+          </article>
+          <article class="panel card">
+            <div class="icon">🌍</div>
+            <h3>دعم متعدد اللغات</h3>
+            <p>واجهة البوت تدعم عدة لغات، مما يجعله مناسبًا لمتداولين من مناطق مختلفة.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="container">
+        <h2 class="section-title">كيف يعمل؟</h2>
+        <p class="section-lead">ثلاث خطوات بسيطة للبدء.</p>
+        <div class="grid-3 steps">
+          <article class="panel card">
+            <div class="step-num">1</div>
+            <h3>افتح البوت</h3>
+            <p>ادخل إلى تيليجرام واضغط Start لبدء الإعداد واختيار اللغة المناسبة.</p>
+          </article>
+          <article class="panel card">
+            <div class="step-num">2</div>
+            <h3>أضف حساب MT5</h3>
+            <p>أضف رقم الحساب واسم السيرفر. ستحصل على تجربة مجانية لأول حساب تضيفه.</p>
+          </article>
+          <article class="panel card">
+            <div class="step-num">3</div>
+            <h3>ثبّت وفعّل</h3>
+            <p>حمّل ملف EA والإعدادات، اتبع دليل التثبيت، ثم فعّل الاشتراك عندما تكون جاهزًا.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="panel pricing">
+          <div>
+            <h2 class="section-title">اشتراك بسيط وواضح</h2>
+            <p class="section-lead" style="margin-bottom:10px;">خطة مناسبة للبدء، مع إمكانية إدارة أكثر من حساب MT5.</p>
+            <div class="price">5$ <small>/ كل 7 أيام</small></div>
+            <p style="color:var(--muted); margin-top:0;">الدفع عبر USDT (BEP20 / TRC20) من داخل تيليجرام.</p>
+            <a class="btn btn-primary" href="https://t.me/Auto_Trading_2027_bot" target="_blank" rel="noopener">اطلع على الاشتراك داخل البوت</a>
+          </div>
+          <div>
+            <ul class="list">
+              <li>مفتاح ترخيص لحساب MT5 المرتبط</li>
+              <li>ملف EA وإعدادات الذهب الموصى بها</li>
+              <li>تنبيهات أخبار USD المهمة</li>
+              <li>دليل تثبيت تفاعلي ودعم عبر أوامر البوت</li>
+              <li>إضافة أكثر من حساب، ولكل حساب اشتراك مستقل</li>
+              <li>عروض الشريك/الإحالة متاحة حسب الشروط داخل البوت</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2 class="section-title">الأسئلة الشائعة</h2>
+        <p class="section-lead">إجابات سريعة قبل أن تبدأ.</p>
+        <div class="faq">
+          <details>
+            <summary>ما هو هذا البوت؟</summary>
+            <p>هو بوت تيليجرام يساعد متداولي الذهب (XAUUSD) على MT5 في إدارة الاشتراك والتفعيل، وتقديم ملف EA والإعدادات الموصى بها، وتنبيهات أخبار USD، ودليل تثبيت خطوة بخطوة.</p>
+          </details>
+          <details>
+            <summary>هل توجد تجربة مجانية؟</summary>
+            <p>نعم، يحصل المستخدم على تجربة مجانية لأول حساب MT5 يضيفه داخل البوت. يمكنك معرفة التفاصيل الحالية مباشرة من داخل البوت عبر الأمر <code>/start</code>.</p>
+          </details>
+          <details>
+            <summary>كيف يتم الدفع والتفعيل؟</summary>
+            <p>تضيف حساب MT5، ثم تختار خطة الاشتراك من داخل تيليجرام وتدفع عبر USDT على شبكة BEP20 أو TRC20. بعد تأكيد الدفع يتم تفعيل الاشتراك للحساب المرتبط.</p>
+          </details>
+          <details>
+            <summary>هل يدعم البوت تنبيهات الأخبار؟</summary>
+            <p>نعم، يقدّم البوت تنبيهات لأهم أخبار USD لمساعدتك على متابعة فترات التأثير على السوق.</p>
+          </details>
+          <details>
+            <summary>هل يمكنني إدارة أكثر من حساب MT5؟</summary>
+            <p>نعم، يمكنك إضافة أكثر من حساب MT5، ولكل حساب اشتراك وتفعيل مستقل.</p>
+          </details>
+          <details>
+            <summary>هل البوت يضمن الربح؟</summary>
+            <p>لا. البوت أداة مساعدة للتداول، والتداول في الذهب وأسواق الفوركس ينطوي على مخاطر وقد تخسر جزءًا من رأس المال أو كله. لا توجد نتائج مضمونة.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="panel cta">
+          <h2 class="section-title">جاهز للتجربة؟</h2>
+          <p>ابدأ بتجربة مجانية لأول حساب MT5، وشاهد كيف يعمل البوت بنفسك داخل تيليجرام.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://t.me/Auto_Trading_2027_bot" target="_blank" rel="noopener">افتح البوت على تيليجرام</a>
+            <a class="btn btn-secondary" href="https://t.me/MQL5AutoTradingChannel" target="_blank" rel="noopener">انضم لقناة التحديثات</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container inner">
+      <div><strong>إخلاء مسؤولية:</strong> هذا الموقع والبوت لأغراض معلوماتية ومساعدة تشغيلية فقط، ولا يشكلان نصيحة استثمارية. التداول في الفوركس والذهب ينطوي على مخاطر عالية وقد يؤدي إلى خسارة رأس المال.</div>
+      <div>للتواصل والدعم: عبر بوت تيليجرام <a class="muted-link" href="https://t.me/Auto_Trading_2027_bot" target="_blank" rel="noopener">@Auto_Trading_2027_bot</a> | القناة: <a class="muted-link" href="https://t.me/MQL5AutoTradingChannel" target="_blank" rel="noopener">@MQL5AutoTranigChannel</a></div>
+      <div>© 2026 Auto Trading Bot. جميع الحقوق محفوظة.</div>
+    </div>
+  </footer>
+</body>
+</html>

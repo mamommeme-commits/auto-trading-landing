@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mt5-bot.duckdns.org/sitemap.xml
