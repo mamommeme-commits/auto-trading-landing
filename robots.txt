@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mamommeme-commits.github.io/auto-trading-landing/sitemap.xml
+Sitemap: https://mamommeme-commits.github.io/auto-trading-landing/sitemap-pages.xml
